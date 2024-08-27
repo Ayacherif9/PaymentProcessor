@@ -1,0 +1,205 @@
+/* Style pour le conteneur du titre et du bouton */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Espacement sous le conteneur */
+}
+
+/* Style pour le titre */
+.header-title {
+    margin: 0;
+}
+
+/* Style pour le bouton "Create Invoice" */
+.create-invoice-button {
+    background-color: rgba(7, 53, 87, 0.969); /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Changement de couleur lorsque tu cliques */
+.create-invoice-button:hover {
+    background-color: rgba(7, 53, 87, 0.969); /* Couleur de fond au survol */
+}
+
+/* Style pour le conteneur de recherche et dropdowns */
+.search-and-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacement entre les éléments */
+    margin-bottom: 20px; /* Espacement sous le conteneur */
+}
+
+/* Style pour le champ de recherche */
+.search-input {
+    flex: 1; /* Prend tout l'espace disponible */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style pour le conteneur des dropdowns */
+.dropdown-container {
+    display: flex;
+    gap: 15px; /* Espacement entre les dropdowns */
+}
+
+/* Style pour les boutons de dropdown */
+.dropdown-button {
+    background-color: rgba(255, 255, 255, 0.004); /* Couleur de fond du bouton */
+    border: 1px solid rgba(7, 53, 87, 0.969); /* Bordure du bouton */
+    border-radius: 4px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    cursor: pointer; /* Curseur en forme de main */
+    position: relative; /* Nécessaire pour positionner la flèche */
+    color: rgba(7, 53, 87, 0.969); /* Couleur du texte */
+}
+
+/* Style pour la flèche */
+.arrow {
+    border: solid rgba(7, 53, 87, 0.969); /* Couleur de la flèche */
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 10px;
+    transform: rotate(45deg);
+    vertical-align: middle;
+}
+
+/* Style pour le menu déroulant */
+.dropdown-menu {
+    display: none; /* Masquer le menu par défaut */
+    position: absolute; /* Positionner le menu */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* S'assurer que le menu est au-dessus des autres éléments */
+    width: max-content;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* Style pour les liens dans le menu déroulant */
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style pour les éléments sélectionnés */
+.selected {
+    background-color: #dcdcdc; /* Couleur de fond pour les éléments sélectionnés */
+}
+
+/* interface invoices */
+/* Fond assombri */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Au-dessus de tout autre contenu */
+    display: none;
+}
+
+/* Interface modale */
+.date-range-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001; /* Juste au-dessus de l'overlay */
+}
+
+/***************create invoices*/
+
+/* Conteneur pour regrouper les champs */
+.search-and-dropdown {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacement entre les champs */
+    margin-bottom: 20px;
+}
+
+/* Conteneur individuel pour chaque champ */
+.input-group {
+    flex: 1; /* Prendre tout l'espace disponible */
+    display: flex;
+    flex-direction:column  ; /* Empiler le label et l'input verticalement */
+}
+
+/* Ajustement des labels */
+.input-group label {
+    margin-bottom: 8px;
+}
+
+/* Ajustement des inputs */
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Increase space between elements */
+.search-and-dropdown {
+    margin-bottom: 30px; /* Increased margin */
+    gap: 25px; /* Increased gap between input fields */
+}
+
+
+/* Increase space between sections */
+h4, p {
+    margin-top: 20px; /* Add margin to titles and paragraphs */
+}
+/* Increase the size of select elements */
+select {
+    width: 100%; /* Take up full width */
+    font-size: 16px; /* Increase font size */
+    height: 40px; /* Increased height */
+}
+
+/* Add space between select elements and other inputs */
+select + br {
+    margin-bottom: 20px; /* Adds space after select */
+}
+
+
+/* Container for stacking the dropdowns */
+.dropdown-container {
+    display: flex;
+    flex-direction: row; /* Align the dropdowns horizontally */
+    gap: 20px; /* Add space between dropdowns */
+}
+
+
+/* Styles for the dropdown button */
+.dropdown-button {
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: rgba(7, 53, 87, 0.969);
+    width: 100%; /* Ensure the button takes full width */
+}
+
+
+
+

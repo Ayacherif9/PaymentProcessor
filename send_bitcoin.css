@@ -1,0 +1,168 @@
+/* Styles for the form container */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+h1{
+    text-align: center;
+}
+/* Styles for the checkbox and label container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Other styles remain unchanged */
+/* Styles for input fields, labels, buttons, etc. */
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+
+/* Base button style */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 10px 5px;
+}
+
+/* Primary button style */
+.button-primary {
+    background-color: rgba(7, 53, 87, 0.969);
+    color: white;
+    border: 1px solid rgba(7, 53, 87, 0.969);
+}
+
+.button-primary:hover {
+    background-color: rgba(7, 53, 87, 0.969);
+}
+
+/* Secondary button style */
+.button-secondary {
+    background-color: white;
+    color: rgba(7, 53, 87, 0.969);
+    border: 1px solid rgba(7, 53, 87, 0.969);
+    
+}
+
+.button-secondary:hover {
+    background-color: #e6f5e9;
+}
+
+
+#advanced-settings-toggle {
+    cursor: pointer;
+    color: rgba(7, 53, 87, 0.969);
+    text-decoration: underline;
+    margin-top: 15px;
+}
+
+#advanced-settings {
+   
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.add-another-destination {
+    font-size: 17px;
+    color: rgba(7, 53, 87, 0.969);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.remove-destination {
+    font-size: 17px;
+    color: #ff1818;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.show-coin-selection{
+    font-size: 17px;
+    color: rgba(7, 53, 87, 0.969);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+/* send_bitcoin.css */
+
+.destination-field {
+    margin-bottom: 10px;
+}
+
+.remove-destination {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.remove-destination:hover {
+    color: darkred;
+}
+
+
+/* Style pour le bouton en haut à droite */
+.top-right-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background-color: rgba(7, 53, 87, 0.969);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000; /* Assure que le bouton reste au-dessus des autres éléments */
+}
+
+.top-right-button:hover {
+    background-color: #c6d1dc5a;
+}
+
+/* Optionnel: style de la classe pour centrer le contenu de la page */
+.content {
+    text-align: center;
+    margin-top: 100px;
+}
+
+

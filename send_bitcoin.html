@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Bitcoin</title>
+    <link rel="stylesheet" href="send_bitcoin.css">
+    
+    <script defer src="send_bitcoin.js"></script>
+    <style>
+        .section { display: none; }
+        .active { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <!-- Bouton en haut à droite -->
+        <a href="bitcoin.html" class="top-right-button" <i class="fa-solid fa-xmark"></i> ></a>
+    </div>
+    
+    <!-- Première section -->
+    <div id="section1" class="section active">
+        <div class="form-container">
+            <form action="#">
+                <h1>Send BTC</h1>
+                <div class="label-container">
+                    <label for="destination1">Destination Address</label>
+                    <span class="add-another-destination">
+                        <a href="#" onclick="showSection('section2')">+ Add another destination</a>
+                    </span>
+                </div>
+                <input id="destination1" name="destination1" type="text"> <br>
+                <div class="label-container">
+                    <label for="Amount1">Amount</label>
+                    <span class="show-coin-selection" onclick="showSection('section3')"> Show coin selection </span>
+                </div>
+                <input id="Amount1" name="Amount1" type="text"> <br>
+                <p class="text-white">Your available balance is 0 BTC.</p>
+                <br>
+                <label for="labels">Labels</label>
+                <input type="text" name="label" placeholder="Select labels">
+                <br>
+                <label for="feeRate1">Fee rate (satoshi per byte)</label><br>
+                <input id="feeRate1" name="feeRate1" type="text">
+                <p>Confirm in the next 
+                    <input type="button" class="button button-secondary" value="10 minutes">
+                    <input type="button" class="button button-secondary" value="1 hour">
+                    <input type="button" class="button button-secondary" value="6 hours">
+                    <input type="button" class="button button-secondary" value="1 day">
+                </p>
+                <div class="checkbox-container">
+                    <input id="subtractFees1" type="checkbox" name="subtractFees1">
+                    <label for="subtractFees1">Subtract fees from amount</label>
+                </div>
+                <div id="advanced-settings-toggle1" class="advanced-settings-toggle">
+                    Advanced Settings
+                </div>
+                <div id="advanced-settings1" class="advanced-settings" style="display: none;">
+                    <div>
+                        <input id="noUtxoChange1" type="checkbox" name="noUtxoChange1">
+                        <label for="noUtxoChange1">Don't create UTXO change</label>
+                    </div>
+                    <div>
+                        <input id="includeNonWitnessUtxo1" type="checkbox" name="includeNonWitnessUtxo1">
+                        <label for="includeNonWitnessUtxo1">Always include non-witness UTXO if available</label>
+                    </div>
+                </div>
+                <input type="submit" class="button button-primary" value="Sign transaction">
+                <input type="submit" class="button button-primary" value="Schedule transaction">
+                <input type="submit" class="button button-primary" value="PSBT">
+                <button class="button button-primary"><i class="fa-regular fa-paste"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Deuxième section -->
+    <div id="section2" class="section">
+        <div class="form-container">
+            <form action="#">
+                <h1>Send BTC</h1>
+                <div id="destination-container">
+                   
+                    <div class="destination-field">
+                        <div class="label-container">
+                            <label for="destination">Destination Address</label>
+                            <span class="remove-destination" onclick="removeDestination(this)">Remove destination</span>
+                        </div>
+                        <input name="destination" type="text"> <br>
+                        <div class="label-container">
+                            <label for="Amount">Amount</label>
+                        </div>
+                        <input name="Amount" type="text"> <br>
+                        <p class="text-white">Your available balance is 0 BTC.</p>
+                        <div class="checkbox-container">
+                            <input type="checkbox" name="subtractFees">
+                            <label>Subtract fees from amount</label>
+                        </div>
+                        <label for="labels">Labels</label><br>
+                        <input type="text" name="label" placeholder="Select labels">
+                        <br>
+                        <hr/>
+                    </div>
+                </div>
+                <input type="button" class="button button-secondary" value="Add another destination" onclick="addDestination()">
+                <input type="button" class="button button-secondary" value="Show coin selection" onclick="showSection('section3')">
+                <label for="feeRate2">Fee rate (satoshi per byte)</label><br>
+                <input id="feeRate2" name="feeRate2" type="text">
+                <p>Confirm in the next 
+                    <input type="button" class="button button-secondary" value="10 minutes">
+                    <input type="button" class="button button-secondary" value="1 hour">
+                    <input type="button" class="button button-secondary" value="6 hours">
+                    <input type="button" class="button button-secondary" value="1 day">
+                </p>
+                <div id="advanced-settings-toggle2" class="advanced-settings-toggle">
+                    Advanced Settings
+                </div>
+                <div id="advanced-settings2" class="advanced-settings" style="display: none;">
+                    <div>
+                        <input id="noUtxoChange2" type="checkbox" name="noUtxoChange2">
+                        <label for="noUtxoChange2">Don't create UTXO change</label>
+                    </div>
+                    <div>
+                        <input id="includeNonWitnessUtxo2" type="checkbox" name="includeNonWitnessUtxo2">
+                        <label for="includeNonWitnessUtxo2">Always include non-witness UTXO if available</label>
+                    </div>
+                </div>
+                <input type="submit" class="button button-primary" value="Sign transaction">
+                <input type="submit" class="button button-primary" value="Schedule transaction">
+                <input type="submit" class="button button-primary" value="PSBT">
+                <input type="submit" class="button button-primary" value="Photo">
+            </form>
+        </div>
+    </div>
+
+    <!-- Troisième section -->
+    <div id="section3" class="section">
+        <div class="form-container">
+            <form action="#">
+                <h1>Send BTC</h1>
+                <div class="label-container">
+                    <label for="destination1">Destination Address</label>
+                    <span class="add-another-destination">
+                        <a href="#" onclick="showSection('section2')"> + Add another destination</a>
+                    </span>
+                </div>
+                <input id="destination1" name="destination1" type="text"> <br>
+                <div class="label-container">
+                    <label for="Amount1">Amount</label>
+                    <span class="show-coin-selection" onclick="showSection('section1')"> Hide coin selection </span>
+                </div>
+                <input id="Amount1" name="Amount1" type="text"> <br>
+                <p class="text-white">Your available balance is 0 BTC.</p>               
+                <label for="labels">Labels</label>
+                <input type="text" name="label" placeholder="Select labels">
+                <br>
+                
+                <div class="label-container">
+                    <h3>Coin selection </h3>
+                    <span class="label-container"> 0 selected / 0 total (0 BTC) </span>
+                </div>
+                <input id="" name="" type="text" placeholder="Filter by transaction id,amount,label,comment.."> <br>
+                <input type="button" class="button button-secondary" value="Show selected only"> <br>
+
+                <label for="feeRate1">Fee rate (satoshi per byte)</label><br>
+                <input id="feeRate1" name="feeRate1" type="text">
+                <p>Confirm in the next 
+                    <input type="button" class="button button-secondary" value="10 minutes">
+                    <input type="button" class="button button-secondary" value="1 hour">
+                    <input type="button" class="button button-secondary" value="6 hours">
+                    <input type="button" class="button button-secondary" value="1 day">
+                </p>
+                <div class="checkbox-container">
+                    <input id="subtractFees1" type="checkbox" name="subtractFees1">
+                    <label for="subtractFees1">Subtract fees from amount</label>
+                </div>
+                <div id="advanced-settings-toggle1" class="advanced-settings-toggle">
+                    Advanced Settings
+                </div>
+                <div id="advanced-settings1" class="advanced-settings" style="display: none;">
+                    <div>
+                        <input id="noUtxoChange1" type="checkbox" name="noUtxoChange1">
+                        <label for="noUtxoChange1">Don't create UTXO change</label>
+                    </div>
+                    <div>
+                        <input id="includeNonWitnessUtxo1" type="checkbox" name="includeNonWitnessUtxo1">
+                        <label for="includeNonWitnessUtxo1">Always include non-witness UTXO if available</label>
+                    </div>
+                </div>
+                <input type="submit" class="button button-primary" value="Sign transaction">
+                <input type="submit" class="button button-primary" value="Schedule transaction">
+                <input type="submit" class="button button-primary" value="PSBT">
+                <input type="submit" class="button button-primary" value="Photo">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

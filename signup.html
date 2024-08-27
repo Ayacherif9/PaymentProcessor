@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>Signup</title>
+
+    <!-- Vendor css -->
+    <link rel="stylesheet" href="../src/vendors/@mdi/font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../src/css/miri-ui-kit-free.css">
+    <link rel="stylesheet" href="./assets/css/demo.css">
+
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="google-signin.js"></script>
+
+    <script defer  src="signup.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="signup.css">
+
+</head>
+
+<body class="login-page">
+    <header class="miri-ui-kit-header header-no-bg-img header-navbar-only">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miriUiKitNavbar"
+                    aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="miriUiKitNavbar">
+                    <div class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="card login-card">
+        <div class="card-body">
+            <h3 class="text-center text-white font-weight-light mb-4">SIGN UP</h3>
+            <form id="signupForm" action="signup.php" method="post">
+
+                <div class="form-group">
+                    <label for="username" class="text-white" >User Name</label>
+                    <input id="username" name="username" type="text" >
+                    <div class="error"></div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="text-white" >Email</label>
+                    <input id="email" name="email" type="text" >
+                    <div class="error"></div>
+
+                </div>
+
+                <div class="form-group" >
+                    <label for="password" class="text-white" >Password</label>
+                    <input id="password"name="password" type="password">
+                    <div class="error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password2" class="text-white" >Confirm Password</label>
+                    <input id="password2"name="password2" type="password" >
+                    <div class="error"></div>
+                </div>
+
+                <input type="submit" value="Signup" class="btn btn-danger btn-block mb-3">
+            </form>
+            <p class="text-white text-center font-weight-light">or</p>
+            <div id="g_id_onload"
+                data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
+
+            <p class="text-white text-center font-weight-light">Already have an account? <a href="login.html"><input type="submit" value="Login"></a></p>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <nav class="navbar navbar-dark bg-transparent navbar-expand d-block d-sm-flex text-center justify-content-between">
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
